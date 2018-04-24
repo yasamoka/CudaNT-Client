@@ -6,8 +6,6 @@ import argparse
 from connection_handler import ConnectionHandler
 from connectivity_manager import ConnectivityManager
 
-SERVER_COMMON_NAME = "CudaNT Server"
-
 parser = argparse.ArgumentParser()
 parser.add_argument("-ca", help="CA filepath", required=True)
 parser.add_argument("-key", help="Key filepath", required=True)

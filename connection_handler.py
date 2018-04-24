@@ -1,6 +1,8 @@
 import asyncio
 import struct
 
+SERVER_COMMON_NAME = "CudaNT Server"
+
 class ConnectionHandler(asyncio.Protocol):
   def __init__(self, connectivity_manager):
     self.connectivity_manager = connectivity_manager
