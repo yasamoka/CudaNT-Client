@@ -14,8 +14,7 @@ class ConnectionHandler(asyncio.Protocol):
     # thanks to https://stuff.mit.edu/afs/sipb/project/snipe/snipe/lib/aiohttp/connector.py
     sock = self.transport._ssl_protocol._sslpipe.ssl_object
     server_cert = sock.getpeercert()
-    common_name_key, common_name = server_cert["subject"][5][0]
-    assert common_name_key == "commonName"
+    common_name = server_cert["subject"][5][0][1]
     try:
       assert common_name == SERVER_COMMON_NAME
     except AssertionError:
